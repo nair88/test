@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.library.models.Library;
 import com.library.services.LibraryService;
+import com.library.models.BookDTO;
 import com.library.models.Books;
 
 @RestController
@@ -30,5 +31,10 @@ public class LibraryController {
 	@RequestMapping(method = RequestMethod.GET, value = "/library/{id}")
 	public List<Books> addLibrary(@PathVariable("id") Integer library_id) {
 		return libraryService.getAllBooks(library_id);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/library")
+	public List<BookDTO> getBookEachLibrary() {
+		return libraryService.getBookEachLibrary();
 	}
 }

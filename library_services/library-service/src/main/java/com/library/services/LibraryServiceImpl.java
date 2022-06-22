@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.library.models.BookDTO;
 import com.library.models.Books;
 import com.library.models.Library;
 import com.library.repositories.LibraryDao;
@@ -24,6 +25,12 @@ public class LibraryServiceImpl implements LibraryService {
 	public List<Books> getAllBooks(Integer library_id) {
 		// TODO Auto-generated method stub
 		return libraryDao.getAllBooks(library_id);
+	}
+
+	@Override
+	public List<BookDTO> getBookEachLibrary() {
+		// TODO Auto-generated method stub
+		return libraryDao.getBookEachLibrary();
 	}
 
 }
